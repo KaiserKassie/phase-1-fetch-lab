@@ -1,7 +1,17 @@
+const url = 'https://anapioficeandfire.com/api/books'
+
+// fetch("http://api.open-notify.org/astros.json")
+//   .then(function (response) {
+//     console.log(response);
+//     return response.json();
+//   })
+
 function fetchBooks() {
-  // To pass the tests, don't forget to return your fetch!
-  
+  return fetch(url)
+  .then((resp) => resp.json())
+  .then((json) => renderBooks(json));
 }
+
 
 function renderBooks(books) {
   const main = document.querySelector('main');
